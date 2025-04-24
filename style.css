@@ -5,6 +5,9 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: var(--mid-background);
+    font-family: "Poppins";
+    font-weight: bold;
 }
 
 :root {
@@ -13,4 +16,88 @@ body {
     --mid-background: #647298;
     --red-button: #D03F30;
     --light-letters: #F0F7F5;
+    --darker-mid-background: #262D44;
+}
+
+.full-screen{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-calculator {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.first-stage {
+    width: 100%;
+}
+
+#title {
+    color: #fff;
+}
+
+.second-stage {
+    width: 100%;
+    height: 100px;
+    background-color: var(--dark-background);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#result-number {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #fff;
+}
+.third-stage {
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--darker-mid-background);
+    gap: 1rem;
+}
+
+.one-button {
+    width: 105px;
+    height: 50px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--darker-mid-background);
+}
+
+.numberdel {
+    text-transform: uppercase;
+    background-color: var(--mid-background);
+    color: #fff; 
+}
+
+.numberreset {
+    flex-grow: 2;
+    background-color: var(--mid-background);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.numberequal {
+    flex-grow: 2;
+    color: #fff;
+    font-weight: bolder;
+    background-color: var(--red-button);
 }
