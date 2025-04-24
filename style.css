@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --dark-background: #191F32;
+    --light-background: #E9E3DC;
+    --mid-background: #647298;
+    --red-button: #D03F30;
+    --light-letters: #F0F7F5;
+}
