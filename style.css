@@ -41,7 +41,23 @@ body {
 
 #title {
     color: #fff;
+    margin: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .second-stage {
     width: 100%;
@@ -59,6 +75,7 @@ body {
     font-size: 2.5rem;
     color: #fff;
 }
+
 .third-stage {
     border-radius: 10px;
     padding: 1rem;
@@ -78,14 +95,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--darker-mid-background);
+    box-shadow: 0px 4px 0px hsl(32, 42%, 79%);
+    cursor: pointer;
 }
 
 .numberdel {
     text-transform: uppercase;
     background-color: var(--mid-background);
-    color: #fff; 
+    color: #fff;
+    box-shadow: 0px 4px 0px hsl(224, 28%, 48%);
 }
 
 .numberreset {
@@ -93,6 +113,7 @@ body {
     background-color: var(--mid-background);
     color: #fff;
     text-transform: uppercase;
+    box-shadow: 0px 4px 0px hsl(224, 28%, 48%);
 }
 
 .numberequal {
@@ -100,4 +121,5 @@ body {
     color: #fff;
     font-weight: bolder;
     background-color: var(--red-button);
+    box-shadow: 0px 4px 0px hsl(6, 79%, 50%);
 }

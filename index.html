@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proffesional Calculator</title>
+    <title>Professional Calculator</title>
+    <link rel="shortcut icon" href="img/calculator-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,17 @@
         <div class="full-calculator">
             <div class="first-stage">
                 <h2 id="title">calc</h2>
+                <div class="theme-sector">
+                    <p>theme</p>
+                    <div class="ranger">
+                        <div class="numbers">
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </div>
+                        <input type="range" min="1" max="3" value="1" step="0.1">
+                    </div>
+                </div>
             </div>
             <div class="second-stage">
                 <p id="result-number">100 000</p>
@@ -26,22 +38,20 @@
                 <div class="number4 one-button">4</div>
                 <div class="number5 one-button">5</div>
                 <div class="number6 one-button">6</div>
-                <div class="number+ one-button">+</div>
+                <div class="numberplus one-button">+</div>
                 <div class="number1 one-button">1</div>
                 <div class="number2 one-button">2</div>
                 <div class="number3 one-button">3</div>
-                <div class="number- one-button">-</div>
-                <div class="number, one-button">,</div>
+                <div class="numberplus one-button">-</div>
+                <div class="numbercomma one-button">,</div>
                 <div class="number0 one-button">0</div>
-                <div class="number/ one-button">/</div>
-                <div class="number* one-button">*</div>
+                <div class="numberdivision one-button">/</div>
+                <div class="numbermultiplication one-button">*</div>
                 <div class="numberreset one-button">reset</div>
                 <div class="numberequal one-button">=</div>              
             </div>
         </div>
     </div>
-
-
 <script src="script.js"></script>
 </body>
 </html>
