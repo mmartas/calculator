@@ -11,12 +11,21 @@ body {
 }
 
 :root {
+    /* FIRST THEME */
     --dark-background: #191F32;
     --light-background: #E9E3DC;
     --mid-background: #647298;
     --red-button: #D03F30;
-    --light-letters: #F0F7F5;
     --darker-mid-background: #262D44;
+
+    /* SECOND THEME */
+    --second-dark-background: #C1D37F;
+    --second-light-background: #F0E2A3;
+    --second-mid-background: #E2D58B;
+    --second-red-button: #664E4C;
+    --second-darker-mid-background: #F9D4BB;
+
+    /* THIRD THEME */
 }
 
 .full-screen{

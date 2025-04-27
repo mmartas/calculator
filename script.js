@@ -21,9 +21,12 @@ let placeForResult = document.getElementById("result-number")
 
 let roller = document.getElementById("oneInput")
 
-// roller.addEventListener("input", function(event){
-//     console.log(event.target.value)
-// })
+roller.addEventListener("input", function(event){
+    if(event.target.value === 1){
+        ě
+    }
+    console.log(event.target.value)
+})
 
 let allNumbers = [number0, number1, number2, number3, number4, number5, number6, number7, number8, number9]
 let allOperations = [numberPlus, numberMinus, numberDivision, numberMultiplication]
@@ -128,4 +131,3 @@ numberEqual.addEventListener("click", function(event){
     placeForResult.textContent = finalNumber
     console.log(finalNumber)
 })
-
