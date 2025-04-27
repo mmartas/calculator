@@ -25,15 +25,21 @@ let roller = document.getElementById("oneInput")
 //     console.log(event.target.value)
 // })
 
-let allNumbers = [number1, number2, number3, number4, number5, number6, number7, number8, number9, number0]
+let allNumbers = [number0, number1, number2, number3, number4, number5, number6, number7, number8, number9]
+let allOperations = [numberPlus, numberMinus, numberDivision, numberMultiplication]
 
 let finalNumber = ""
 let countingNumber = ""
 
+let clickedPlus = false
+let clickedMinus = false
+let clickedDivision = false
+let clickedMultiplication = false
 
 function functionCountingNumbers(theNumber){
     if(clickedEqual === true){
         finalNumber = ""
+        countingNumber = ""
     }
     clickedEqual = false
     if(clickedPlus || clickedMinus || clickedDivision || clickedMultiplication){
@@ -47,53 +53,60 @@ function functionCountingNumbers(theNumber){
 
 allNumbers.forEach(function(oneNumber, index){
     oneNumber.addEventListener("click", function(event){
-        functionCountingNumbers(index + 1)
+        functionCountingNumbers(index)
     })
 })
 
 
-numberDel.addEventListener("click", function(event){
-    finalNumber = (finalNumber.slice(0, -1))
-    console.log(finalNumber)
+allOperations.forEach(function(oneOperation){
+    oneOperation.addEventListener("click", function(event){
+        if(oneOperation === numberPlus){
+            clickedPlus = true
+        } else if (oneOperation === numberMinus){
+            clickedMinus = true
+        } else if (oneOperation === numberDivision){
+            clickedDivision = true
+        } else if(oneOperation === numberMultiplication){
+            clickedMultiplication = true
+        }
+    })
 })
 
-let clickedPlus = false
-numberPlus.addEventListener("click", function(event){
-    clickedPlus = true
-})
-
-let clickedMinus = false
-numberMinus.addEventListener("click", function(event){
-    clickedMinus = true
-})
-
-let clickedDivision = false
-numberDivision.addEventListener("click", function(event){
-    clickedDivision = true
-})
-
-let clickedMultiplication = false
-numberMultiplication.addEventListener("click", function(event){
-    clickedMultiplication = true
-})
 
 numberReset.addEventListener("click", function(event){
     finalNumber = "0"
     //console.log(finalNumber)
 })
 
+numberDel.addEventListener("click", function(event){
+    finalNumber = (finalNumber.slice(0, -1))
+    console.log(finalNumber)
+})
+
 let clickedComma = false
 numberComma.addEventListener("click", function(event){
     clickedComma = true
-    finalNumber = `${finalNumber},`
-    placeForResult.textContent = finalNumber
+    if(clickedPlus || clickedMinus || clickedDivision || clickedMultiplication){
+        countingNumber = `${countingNumber},`
+        placeForResult.textContent = countingNumber
+    } else {
+        finalNumber = `${finalNumber},`
+        placeForResult.textContent = finalNumber
+    }
 })
 
 let clickedEqual = false
 numberEqual.addEventListener("click", function(event){
     clickedEqual = true
+    if(countingNumber.includes(",")){
+        countingNumber = parseFloat(countingNumber.replace(",", "."))
+    }
+    if(finalNumber.includes(",")){
+        finalNumber = parseFloat(finalNumber.replace(",", "."))
+    }
     countingNumber = Number(countingNumber)
     finalNumber = Number(finalNumber)
+    
     if(clickedPlus){
         finalNumber = finalNumber + countingNumber
         clickedPlus = false
@@ -111,6 +124,7 @@ numberEqual.addEventListener("click", function(event){
         clickedMultiplication = false
     }
 
+    finalNumber = finalNumber.toString().replace(".", ",");
     placeForResult.textContent = finalNumber
     console.log(finalNumber)
 })
