@@ -44,7 +44,7 @@ body {
 }
 .third-background-color {
     background-color: var(--third-background) !important;
-    box-shadow: 0px 4px 0px hsl(32, 42%, 79%);
+    box-shadow: 0px 4px 0px hsl(10, 51%, 67%);
 }
 
 .first-result-color {
