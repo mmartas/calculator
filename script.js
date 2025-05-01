@@ -21,13 +21,11 @@ let placeForResult = document.getElementById("result-number")
 
 let roller = document.getElementById("oneInput")
 
-
 let background = document.body
 let resultBackground = document.querySelector(".second-stage")
 let equalBackground = document.querySelector(".numberequal")
 let calcBackground = document.querySelector(".third-stage")
 let numberBackground = document.querySelectorAll(".one-button")
-
 
 let colooringFields = [
     background,
@@ -117,27 +115,26 @@ function addColooringClasses(typeOfClass){
     colooringFields.forEach((oneField, i) => oneField.classList.add(typeOfClass[i]))
 }
 
+document.body.setAttribute("data-theme", "theme1")
 addColooringClasses(firstColooringClasses)
 roller.addEventListener("input", function(event){
     if(event.target.value === "1"){
         removeColooringClasses(secondColooringClasses)
         removeColooringClasses(thirdColooringClasses)
         addColooringClasses(firstColooringClasses)
+        document.body.setAttribute("data-theme", "theme1")
     } else if(event.target.value === "2"){
         removeColooringClasses(firstColooringClasses)
         removeColooringClasses(thirdColooringClasses)
         addColooringClasses(secondColooringClasses)
+        document.body.setAttribute("data-theme", "theme2")
     } else {
         removeColooringClasses(secondColooringClasses)
         removeColooringClasses(firstColooringClasses)
         addColooringClasses(thirdColooringClasses)
+        document.body.setAttribute("data-theme", "theme3")
     }
 })
-
-
-
-
-
 
 let allNumbers = [number0, number1, number2, number3, number4, number5, number6, number7, number8, number9]
 let allOperations = [numberPlus, numberMinus, numberDivision, numberMultiplication]
@@ -171,7 +168,6 @@ allNumbers.forEach(function(oneNumber, index){
     })
 })
 
-
 allOperations.forEach(function(oneOperation){
     oneOperation.addEventListener("click", function(event){
         if(oneOperation === numberPlus){
@@ -185,7 +181,6 @@ allOperations.forEach(function(oneOperation){
         }
     })
 })
-
 
 numberReset.addEventListener("click", function(event){
     finalNumber = ""
