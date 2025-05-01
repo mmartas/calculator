@@ -21,12 +21,123 @@ let placeForResult = document.getElementById("result-number")
 
 let roller = document.getElementById("oneInput")
 
+
+let background = document.body
+let resultBackground = document.querySelector(".second-stage")
+let equalBackground = document.querySelector(".numberequal")
+let calcBackground = document.querySelector(".third-stage")
+let numberBackground = document.querySelectorAll(".one-button")
+
+console.log(numberBackground)
+let colooringFields = [
+    background,
+    resultBackground,
+    equalBackground,
+    calcBackground,
+    ...numberBackground,
+    numberDel,
+    numberReset
+]
+
+let firstColooringClasses = [
+    "first-background-color",
+    "first-result-color",
+    "first-equal-color",
+    "first-calc-color",
+    "first-number-color",
+    "first-number-color",
+    "first-number-color",
+    "first-background-color",
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-number-color", 
+    "first-background-color"
+]
+let secondColooringClasses = [
+    "second-background-color",
+    "second-result-color",
+    "second-equal-color",
+    "second-calc-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-background-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-number-color",
+    "second-background-color"
+]
+let thirdColooringClasses = [
+    "third-background-color",
+    "third-result-color",
+    "third-equal-color",
+    "third-calc-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-background-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-number-color",
+    "third-background-color"
+]
+
+function removeColooringClasses(typeOfClass){
+    colooringFields.forEach((oneField, i) => oneField.classList.remove(typeOfClass[i]))
+}
+
+function addColooringClasses(typeOfClass){
+    colooringFields.forEach((oneField, i) => oneField.classList.add(typeOfClass[i]))
+}
+
+addColooringClasses(firstColooringClasses)
 roller.addEventListener("input", function(event){
-    if(event.target.value === 1){
-        ě
+    if(event.target.value === "1"){
+        removeColooringClasses(secondColooringClasses)
+        removeColooringClasses(thirdColooringClasses)
+        addColooringClasses(firstColooringClasses)
+    } else if(event.target.value === "2"){
+        removeColooringClasses(firstColooringClasses)
+        removeColooringClasses(thirdColooringClasses)
+        addColooringClasses(secondColooringClasses)
+    } else {
+        removeColooringClasses(secondColooringClasses)
+        removeColooringClasses(firstColooringClasses)
+        addColooringClasses(thirdColooringClasses)
     }
-    console.log(event.target.value)
 })
+
+
+
+
+
 
 let allNumbers = [number0, number1, number2, number3, number4, number5, number6, number7, number8, number9]
 let allOperations = [numberPlus, numberMinus, numberDivision, numberMultiplication]

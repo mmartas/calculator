@@ -5,27 +5,92 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: var(--mid-background);
+    /* background-color: var(--background); */
     font-family: "Poppins";
     font-weight: bold;
 }
 
 :root {
     /* FIRST THEME */
-    --dark-background: #191F32;
-    --light-background: #E9E3DC;
-    --mid-background: #647298;
-    --red-button: #D03F30;
-    --darker-mid-background: #262D44;
+    --result-background: #191F32;
+    --number-background: #E9E3DC;
+    --background: #647298;
+    --equal-background: #D03F30;
+    --calc-background: #262D44;
 
     /* SECOND THEME */
-    --second-dark-background: #C1D37F;
-    --second-light-background: #F0E2A3;
-    --second-mid-background: #E2D58B;
-    --second-red-button: #664E4C;
-    --second-darker-mid-background: #F9D4BB;
+    --second-result-background: #6C5A49;
+    --second-number-background: #D0FCB3;
+    --second-background: #C8AD55;
+    --second-equal-background: #271F30;
+    --second-calc-background: #9BC59D;
 
     /* THIRD THEME */
+    --third-result-background: #890620;
+    --third-background: #DA9F93;
+    --third-calc-background: #B6465F;
+    --third-equal-background: #2C0703;
+    --third-number-background: #EBD4CB;
+}
+
+/* THEME COLORS */
+.first-background-color {
+    background-color: var(--background) !important;
+    box-shadow: 0px 4px 0px hsl(224, 28%, 48%);
+}
+.second-background-color {
+    background-color: var(--second-background) !important;
+    box-shadow: 0px 4px 0px hsl(46, 57%, 50%);
+}
+.third-background-color {
+    background-color: var(--third-background) !important;
+    box-shadow: 0px 4px 0px hsl(32, 42%, 79%);
+}
+
+.first-result-color {
+    background-color: var(--result-background) !important;
+}
+.second-result-color {
+    background-color: var(--second-result-background) !important;
+}
+.third-result-color {
+    background-color: var(--third-result-background) !important;
+}
+
+.first-calc-color {
+    background-color: var(--calc-background) !important;
+}
+.second-calc-color {
+    background-color: var(--second-calc-background) !important;
+}
+.third-calc-color {
+    background-color: var(--third-calc-background) !important;
+}
+
+.first-number-color {
+    background-color: var(--number-background) !important;
+    box-shadow: 0px 4px 0px hsl(32, 42%, 79%);
+}
+.second-number-color {
+    background-color: var(--second-number-background) !important;
+    box-shadow: 0px 4px 0px hsl(97, 73%, 77%);
+}
+.third-number-color {
+    background-color: var(--third-number-background) !important;
+    box-shadow: 0px 4px 0px hsl(17, 57%, 79%);
+}
+
+.first-equal-color {
+    background-color: var(--equal-background) !important;
+    box-shadow: 0px 4px 0px hsl(6, 79%, 50%);
+}
+.second-equal-color {
+    background-color: var(--second-equal-background) !important;
+    box-shadow: 0px 4px 0px hsl(270, 35%, 10%);
+}
+.third-equal-color {
+    background-color: var(--third-equal-background) !important;
+    box-shadow: 0px 4px 0px hsl(5, 86%, 5%);
 }
 
 .full-screen{
@@ -98,7 +163,7 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-    background-color: var(--darker-mid-background);
+    background-color: var(--calc-background);
     height: 23px;
     position: relative;
     z-index: 1;
@@ -111,7 +176,7 @@ input[type="range"]::-webkit-slider-thumb {
     height: 15px;
     width: 15px;
     border-radius: 100%;
-    background-color: var(--red-button);
+    background-color: var(--equal-background);
     margin-top: 4px;
     z-index: 1;
 }
@@ -125,7 +190,7 @@ input[type="range"]::-webkit-slider-thumb {
 .second-stage {
     width: 100%;
     height: 100px;
-    background-color: var(--dark-background);
+    background-color: var(--result-background);
     border-radius: 10px;
     padding: 1rem;
     display: flex;
@@ -146,43 +211,43 @@ input[type="range"]::-webkit-slider-thumb {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: var(--darker-mid-background);
+    background-color: var(--calc-background);
     gap: 1rem;
 }
 
 .one-button {
     width: 105px;
     height: 50px;
-    background-color: var(--light-background);
+    /* background-color: var(--number-background); */
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.8rem;
-    color: var(--darker-mid-background);
-    box-shadow: 0px 4px 0px hsl(32, 42%, 79%);
+    color: var(--calc-background);
+    /* box-shadow: 0px 4px 0px hsl(32, 42%, 79%); */
     cursor: pointer;
 }
 
 .numberdel {
     text-transform: uppercase;
-    background-color: var(--mid-background);
+    /* background-color: var(--background); */
     color: #fff;
-    box-shadow: 0px 4px 0px hsl(224, 28%, 48%);
+    /* box-shadow: 0px 4px 0px hsl(224, 28%, 48%); */
 }
 
 .numberreset {
     flex-grow: 2;
-    background-color: var(--mid-background);
+    /* background-color: var(--background); */
     color: #fff;
     text-transform: uppercase;
-    box-shadow: 0px 4px 0px hsl(224, 28%, 48%);
+    /* box-shadow: 0px 4px 0px hsl(224, 28%, 48%); */
 }
 
 .numberequal {
     flex-grow: 2;
     color: #fff;
     font-weight: bolder;
-    background-color: var(--red-button);
-    box-shadow: 0px 4px 0px hsl(6, 79%, 50%);
+    /* background-color: var(--equal-background); */
+    /* box-shadow: 0px 4px 0px hsl(6, 79%, 50%); */
 }
