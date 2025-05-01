@@ -28,7 +28,7 @@ let equalBackground = document.querySelector(".numberequal")
 let calcBackground = document.querySelector(".third-stage")
 let numberBackground = document.querySelectorAll(".one-button")
 
-console.log(numberBackground)
+
 let colooringFields = [
     background,
     resultBackground,
@@ -188,38 +188,45 @@ allOperations.forEach(function(oneOperation){
 
 
 numberReset.addEventListener("click", function(event){
-    finalNumber = "0"
-    //console.log(finalNumber)
+    finalNumber = ""
+    countingNumber = ""
+    placeForResult.textContent = "0"
 })
 
 numberDel.addEventListener("click", function(event){
-    finalNumber = (finalNumber.slice(0, -1))
-    console.log(finalNumber)
+    if(placeForResult !== ""){
+        if(clickedPlus || clickedMinus || clickedDivision || clickedMultiplication){
+            countingNumber = (countingNumber.slice(0, -1))
+            placeForResult.textContent = countingNumber
+        } else {
+            finalNumber = (finalNumber.slice(0, -1))
+            placeForResult.textContent = finalNumber
+        }
+    }
 })
 
 let clickedComma = false
 numberComma.addEventListener("click", function(event){
     clickedComma = true
     if(clickedPlus || clickedMinus || clickedDivision || clickedMultiplication){
-        countingNumber = `${countingNumber},`
-        placeForResult.textContent = countingNumber
+        if(!countingNumber.includes(".")){
+            countingNumber += "."
+            placeForResult.textContent = countingNumber
+        }
     } else {
-        finalNumber = `${finalNumber},`
-        placeForResult.textContent = finalNumber
+        if(!finalNumber.includes(".")){
+            finalNumber += "."
+            placeForResult.textContent = finalNumber
+        }
     }
 })
 
 let clickedEqual = false
 numberEqual.addEventListener("click", function(event){
     clickedEqual = true
-    if(countingNumber.includes(",")){
-        countingNumber = parseFloat(countingNumber.replace(",", "."))
-    }
-    if(finalNumber.includes(",")){
-        finalNumber = parseFloat(finalNumber.replace(",", "."))
-    }
-    countingNumber = Number(countingNumber)
-    finalNumber = Number(finalNumber)
+    
+    countingNumber = parseFloat(countingNumber)
+    finalNumber = parseFloat(finalNumber)
     
     if(clickedPlus){
         finalNumber = finalNumber + countingNumber
@@ -237,8 +244,7 @@ numberEqual.addEventListener("click", function(event){
         finalNumber = finalNumber * countingNumber
         clickedMultiplication = false
     }
-
-    finalNumber = finalNumber.toString().replace(".", ",");
+    finalNumber = finalNumber.toFixed(3)
     placeForResult.textContent = finalNumber
-    console.log(finalNumber)
+    //console.log(finalNumber)
 })
